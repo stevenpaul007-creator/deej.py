@@ -1,0 +1,15 @@
+[Unit]
+Description=Serial Sound Control Service
+After=network.target
+
+[Service]
+Type=simple
+User=your_username
+WorkingDirectory=/home/your_username/deej-python-linux
+ExecStart=/home/your_username/deej-python-linux/venv/bin/python deej.py
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
